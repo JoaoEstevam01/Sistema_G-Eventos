@@ -8,3 +8,10 @@ CREATE TABLE Evento (
     data_fim DATE,
     local_evento VARCHAR(100)
 );
+
+CREATE TABLE Participante(
+	cod_participante INT auto_increment PRIMARY KEY NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(50),
+    instituicao VARCHAR(100)
+);
