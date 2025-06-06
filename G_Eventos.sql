@@ -22,3 +22,12 @@ CREATE TABLE Participante(
     email VARCHAR(50),
     instituicao VARCHAR(100)
 );
+CREATE TABLE Inscricao (
+    numero_inscricao INT AUTO_INCREMENT PRIMARY KEY,
+    codigo_evento INT NOT NULL,
+    cod_participante INT NOT NULL,
+    data_inscricao DATE NOT NULL,
+    status_inscricao VARCHAR(20) NOT NULL, -- Ex: 'confirmada', 'cancelada'
+    FOREIGN KEY (codigo_evento) REFERENCES Evento(codigo_evento),
+    FOREIGN KEY (cod_participante) REFERENCES Participante(cod_participante)
+);
